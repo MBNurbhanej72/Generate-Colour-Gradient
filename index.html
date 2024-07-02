@@ -62,9 +62,12 @@
 
         btn1.addEventListener("click", () => {
             rgb1 = hexValues();
+
             document.body.style.backgroundImage =
                 `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
+
             btn1.style.backgroundColor = rgb1;
+            btn1.innerHTML = rgb1;
 
             copyCode.innerHTML = `background-image: linear-gradient(<br>
                 145deg,<br>
@@ -72,7 +75,7 @@
                 ${rgb2},<br>
                 ${rgb3},<br>
                 ${rgb4},<br>
-                ${rgb4}<br>
+                ${rgb5}<br>
                 );`;
         });
 
@@ -81,6 +84,7 @@
             document.body.style.backgroundImage =
                 `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
             btn2.style.backgroundColor = rgb2;
+            btn2.innerHTML = rgb2;
 
 
             copyCode.innerHTML = `background-image: linear-gradient(<br>
@@ -89,7 +93,7 @@
                 ${rgb2},<br>
                 ${rgb3},<br>
                 ${rgb4},<br>
-                ${rgb4}<br>
+                ${rgb5}<br>
                 );`;
         });
 
@@ -98,6 +102,7 @@
             document.body.style.backgroundImage =
                 `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
             btn3.style.backgroundColor = rgb3;
+            btn3.innerHTML = rgb3;
 
 
             copyCode.innerHTML = `background-image: linear-gradient(<br>
@@ -106,7 +111,7 @@
                 ${rgb2},<br>
                 ${rgb3},<br>
                 ${rgb4},<br>
-                ${rgb4}<br>
+                ${rgb5}<br>
                 );`;
         });
 
@@ -115,6 +120,7 @@
             document.body.style.backgroundImage =
                 `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
             btn4.style.backgroundColor = rgb4;
+            btn4.innerHTML = rgb4;
 
 
             copyCode.innerHTML = `background-image: linear-gradient(<br>
@@ -123,7 +129,7 @@
                 ${rgb2},<br>
                 ${rgb3},<br>
                 ${rgb4},<br>
-                ${rgb4}<br>
+                ${rgb5}<br>
                 );`;
         });
 
@@ -132,6 +138,7 @@
             document.body.style.backgroundImage =
                 `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
             btn5.style.backgroundColor = rgb5;
+            btn5.innerHTML = rgb5;
 
 
             copyCode.innerHTML = `background-image: linear-gradient(<br>
@@ -140,7 +147,7 @@
                 ${rgb2},<br>
                 ${rgb3},<br>
                 ${rgb4},<br>
-                ${rgb4}<br>
+                ${rgb5}<br>
                 );`;
         });
 
