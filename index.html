@@ -151,19 +151,10 @@
                 );`;
         });
 
-        copyCode.addEventListener("click", () => {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(copyCode.innerText);
-            } else {
-                // Fallback for browsers that do not support navigator.clipboard
-                const textarea = document.createElement('textarea');
-                textarea.value = copyCode.innerText;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                alert("Copied the text");
-            }
+        copyCode.addEventListener("click", (e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText(copyCode.innerText);
+            alert("Copied the text");
         });
 
     </script>
