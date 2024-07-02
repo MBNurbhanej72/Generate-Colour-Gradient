@@ -4,23 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./favicon_io/site.webmanifest">
+
     <title>Generate Colors Gradient</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section>
+    <section class="container">
         <div id="parent">
             <button id="btn1">#051937</button>
-            <button id="btn2">#008793</button>
+            <button id="btn2">#004d7a</button>
+            <button id="btn3">#008793</button>
+            <button id="btn4">#00bf72</button>
+            <button id="btn5">#a8eb12</button>
         </div>
         <h2>Copy your code here :</h2>
-        <div id="copyCode">
-            background-image: linear-gradient(to <br>
-            right, #5c91e5, #983fc6);
+        <div class="copyMain">
+            <div id="copyCode">
+                background-image: linear-gradient(<br>
+                145deg,<br>
+                #051937,<br>
+                #004d7a,<br>
+                #008793,<br>
+                #00bf72,<br>
+                #a8eb12<br>
+                );
+            </div>
         </div>
     </section>
-    <script src="script.js">
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let btn3 = document.getElementById("btn3");
+        let btn4 = document.getElementById("btn4");
+        let btn5 = document.getElementById("btn5");
+        let copyCode = document.getElementById("copyCode");
+
+        let rgb1 = "#051937";
+        let rgb2 = "#004d7a";
+        let rgb3 = "#008793";
+        let rgb4 = "#00bf72";
+        let rgb5 = "#a8eb12";
+
+        const hexValues = () => {
+            let hex = "0123456789abcdef";
+            let colors = "#";
+            for (let i = 0; i < 6; i++) {
+                colors = colors + hex[Math.floor(Math.random() * 16)];
+            }
+            return colors;
+        };
+
+        btn1.addEventListener("click", () => {
+            rgb1 = hexValues();
+            document.body.style.backgroundImage =
+                `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
+            btn1.style.backgroundColor = rgb1;
+
+            copyCode.innerHTML = `background-image: linear-gradient(<br>
+                145deg,<br>
+                ${rgb1},<br>
+                ${rgb2},<br>
+                ${rgb3},<br>
+                ${rgb4},<br>
+                ${rgb4}<br>
+                );`;
+        });
+
+        btn2.addEventListener("click", () => {
+            rgb2 = hexValues();
+            document.body.style.backgroundImage =
+                `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
+            btn2.style.backgroundColor = rgb2;
+
+
+            copyCode.innerHTML = `background-image: linear-gradient(<br>
+                145deg,<br>
+                ${rgb1},<br>
+                ${rgb2},<br>
+                ${rgb3},<br>
+                ${rgb4},<br>
+                ${rgb4}<br>
+                );`;
+        });
+
+        btn3.addEventListener("click", () => {
+            rgb3 = hexValues();
+            document.body.style.backgroundImage =
+                `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
+            btn3.style.backgroundColor = rgb3;
+
+
+            copyCode.innerHTML = `background-image: linear-gradient(<br>
+                145deg,<br>
+                ${rgb1},<br>
+                ${rgb2},<br>
+                ${rgb3},<br>
+                ${rgb4},<br>
+                ${rgb4}<br>
+                );`;
+        });
+
+        btn4.addEventListener("click", () => {
+            rgb4 = hexValues();
+            document.body.style.backgroundImage =
+                `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
+            btn4.style.backgroundColor = rgb4;
+
+
+            copyCode.innerHTML = `background-image: linear-gradient(<br>
+                145deg,<br>
+                ${rgb1},<br>
+                ${rgb2},<br>
+                ${rgb3},<br>
+                ${rgb4},<br>
+                ${rgb4}<br>
+                );`;
+        });
+
+        btn5.addEventListener("click", () => {
+            rgb5 = hexValues();
+            document.body.style.backgroundImage =
+                `linear-gradient(145deg, ${rgb1}, ${rgb2}, ${rgb3}, ${rgb4}, ${rgb5})`;
+            btn5.style.backgroundColor = rgb5;
+
+
+            copyCode.innerHTML = `background-image: linear-gradient(<br>
+                145deg,<br>
+                ${rgb1},<br>
+                ${rgb2},<br>
+                ${rgb3},<br>
+                ${rgb4},<br>
+                ${rgb4}<br>
+                );`;
+        });
+
+        copyCode.addEventListener("click", () => {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(copyCode.innerText);
+            } else {
+                // Fallback for browsers that do not support navigator.clipboard
+                const textarea = document.createElement('textarea');
+                textarea.value = copyCode.innerText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert("Copied the text");
+            }
+        });
+
     </script>
 </body>
 
