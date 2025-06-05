@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="./favicon_io/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
 
     <title>Generate Colors Gradient</title>
     <link rel="stylesheet" href="style.css">
@@ -151,11 +151,23 @@
                 );`;
         });
 
-        copyCode.addEventListener("click", (e) => {
-            e.preventDefault();
-            navigator.clipboard.writeText(copyCode.innerText);
-            alert("Copied the text");
+        copyCode.addEventListener("click", async (e) => {
+            try {
+                e.preventDefault();
+
+                if (navigator.clipboard) {
+                    await navigator.clipboard.writeText(copyCode.innerText);
+                    alert("Copied the text");
+                } else {
+                    throw new Error('Clipboard API not available');
+                }
+
+            } catch (err) {
+                console.error('Unable to copy:', err);
+                alert('Failed to copy text. Please try again.');
+            }
         });
+
 
     </script>
 </body>
